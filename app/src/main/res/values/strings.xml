@@ -1,3 +1,6 @@
 <resources>
-    <string name="app_name">Artisanat</string>
+    <string name="app_name">ARTISAN</string>
+    <string name="getStartedText">COMMENCER</string>
+    <string name="login">LOGIN</string>
+    <string name="signUp">CREER UN COMPTE</string>
 </resources>
