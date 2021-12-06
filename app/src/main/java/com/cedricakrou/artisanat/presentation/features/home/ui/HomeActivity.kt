@@ -13,7 +13,10 @@ import com.cedricakrou.artisanat.presentation.common.getMessage
 import com.cedricakrou.artisanat.presentation.features.announcement.ui.AnnouncementActivity
 import com.cedricakrou.artisanat.presentation.features.announcement.ui.adapter.AnnouncementRecyclerviewAdapter
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import kotlinx.android.synthetic.main.activity_announcements.*
 import kotlinx.android.synthetic.main.activity_home.*
+import kotlinx.android.synthetic.main.activity_home.bottom_navigation
+import kotlinx.android.synthetic.main.activity_home.ll_body
 import kotlinx.android.synthetic.main.activity_home.recyclerview
 import kotlinx.android.synthetic.main.layout_loading.*
 
@@ -48,11 +51,13 @@ class HomeActivity : BaseActivity<
                     finish()
                     return@OnNavigationItemSelectedListener true
                 }
-
+                R.id.nav_settings-> {
+                    finish()
+                    return@OnNavigationItemSelectedListener true
+                }
             }
             false
         }
-
 
         bottom_navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
 

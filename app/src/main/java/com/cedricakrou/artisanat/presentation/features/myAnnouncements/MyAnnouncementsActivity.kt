@@ -11,7 +11,10 @@ import com.cedricakrou.artisanat.presentation.common.BaseActivity
 import com.cedricakrou.artisanat.presentation.common.getMessage
 import com.cedricakrou.artisanat.presentation.features.StoreData
 import com.cedricakrou.artisanat.presentation.features.announcement.ui.AnnouncementActivity
+import com.cedricakrou.artisanat.presentation.features.home.ui.HomeActivity
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import kotlinx.android.synthetic.main.activity_my_announcements.*
+import kotlinx.android.synthetic.main.activity_my_announcements.ll_body
 import kotlinx.android.synthetic.main.layout_loading.*
 
 class MyAnnouncementsActivity : BaseActivity<
@@ -30,6 +33,30 @@ class MyAnnouncementsActivity : BaseActivity<
 
     override fun initUI() {
 
+        val mOnNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
+            when (item.itemId) {
+                R.id.nav_home -> {
+                    val intent = Intent( this, HomeActivity::class.java )
+                    startActivity( intent )
+                    finish()
+                    return@OnNavigationItemSelectedListener true
+                }
+                R.id.nav_announcements -> {
+                    val intent = Intent( this, AnnouncementActivity::class.java )
+                    startActivity( intent )
+                    finish()
+                    return@OnNavigationItemSelectedListener true
+                }
+                R.id.nav_settings-> {
+                    finish()
+                    return@OnNavigationItemSelectedListener true
+                }
+            }
+            false
+        }
+
+        bottom_navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
+
     }
 
     override fun initDATA() {
@@ -46,7 +73,8 @@ class MyAnnouncementsActivity : BaseActivity<
                     title = edt_title.text.toString(),
                     description = edt_description.text.toString(),
                     client = StoreData.clientConnected.username,
-                    speciality = specialityChoose
+                    speciality = specialityChoose,
+                    price = if ( edt_price.text.isEmpty() ) 0.0 else edt_price.text.toString().toDouble()
                 )
             )
         }

@@ -63,7 +63,6 @@ interface ApiService {
     ) : Response<ApiResponse<List<Nothing>>>
 
 
-    @FormUrlEncoded
     @GET( value = Config.specialities)
     suspend fun getspecialities(
     ) : Response<ApiResponse<List<Speciality>>>

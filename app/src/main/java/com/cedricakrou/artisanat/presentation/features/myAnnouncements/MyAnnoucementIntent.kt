@@ -8,6 +8,7 @@ sealed class MyAnnoucementIntent : IViewIntent {
         val title : String = "",
         val description : String = "",
         val client : String = "",
-        val speciality: String = ""
+        val speciality: String = "",
+        val price : Double = 0.0
     ) : MyAnnoucementIntent()
 }

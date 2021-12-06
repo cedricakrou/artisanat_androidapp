@@ -53,6 +53,10 @@ class AnnouncementActivity : BaseActivity<AnnouncementIntent,
                     finish()
                     return@OnNavigationItemSelectedListener true
                 }
+                R.id.nav_settings-> {
+                    finish()
+                    return@OnNavigationItemSelectedListener true
+                }
             }
             false
         }
