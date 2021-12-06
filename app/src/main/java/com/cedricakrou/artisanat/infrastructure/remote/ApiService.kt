@@ -1,6 +1,7 @@
 package com.cedricakrou.artisanat.infrastructure.remote
 
 import com.cedricakrou.artisanat.data.common.ApiResponse
+import com.cedricakrou.artisanat.domain.entities.Announcement
 import com.cedricakrou.artisanat.domain.entities.Client
 import retrofit2.http.Field
 import retrofit2.http.FormUrlEncoded
@@ -36,5 +37,11 @@ interface ApiService {
         @Field( value = "username" ) username : String,
         @Field( value = "code" ) code : String
     ) : Response<ApiResponse<Nothing>>
+
+    @FormUrlEncoded
+    @POST( value = Config.listAnnouncements)
+    suspend fun listAnnouncements(
+        @Field( value = "username" ) username : String
+    ) : Response<ApiResponse<List<Announcement>>>
 
 }

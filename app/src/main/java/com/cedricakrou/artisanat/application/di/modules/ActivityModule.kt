@@ -4,7 +4,9 @@ import android.content.Context
 import android.content.SharedPreferences
 import android.preference.PreferenceManager
 import com.cedricakrou.artisanat.application.di.common.AppRouter
+import com.cedricakrou.artisanat.data.managers.contrats.AnnouncementManager
 import com.cedricakrou.artisanat.data.managers.contrats.UserManager
+import com.cedricakrou.artisanat.data.managers.remote.impl.AnnouncementManagerImpl
 import com.cedricakrou.artisanat.data.managers.remote.impl.UserManagerImpl
 import com.cedricakrou.artisanat.infrastructure.remote.ApiService
 import com.cedricakrou.artisanat.presentation.common.RootBaseActivity
@@ -31,5 +33,8 @@ class ActivityModule constructor( private val activity: RootBaseActivity) {
 
     @Provides
     fun providesUserAccessor( apiService: ApiService) : UserManager = UserManagerImpl( apiService )
+
+    @Provides
+    fun providesAnnouncementAccessor( apiService: ApiService ) : AnnouncementManager = AnnouncementManagerImpl( apiService )
 
 }

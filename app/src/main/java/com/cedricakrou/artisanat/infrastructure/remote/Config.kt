@@ -8,4 +8,10 @@ object Config {
     const val signIn = "${client}sign-in"
     const val signUp = "${client}sign-up"
     const val verifyOtp = "${client}verify-otp"
+
+    const val announcements = "announcement/"
+
+    const val save = "${announcements}save"
+    const val listAnnouncements = "${ announcements}list-announcements"
+    const val myAnnouncements = "${ announcements }my-announcements"
 }
