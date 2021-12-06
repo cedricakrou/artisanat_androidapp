@@ -5,6 +5,7 @@ import com.cedricakrou.artisanat.application.di.annotations.ViewModelKey
 import com.cedricakrou.artisanat.presentation.features.announcement.AnnouncementViewModel
 import com.cedricakrou.artisanat.presentation.features.codeOtp.CodeOtpViewModel
 import com.cedricakrou.artisanat.presentation.features.home.ui.HomeViewModel
+import com.cedricakrou.artisanat.presentation.features.myAnnouncements.MyAnnouncementViewModel
 import com.cedricakrou.artisanat.presentation.features.onboarding.OnBoardingViewModel
 import com.cedricakrou.artisanat.presentation.features.signIn.SignInViewModel
 import com.cedricakrou.artisanat.presentation.features.signUp.SignUpViewModel
@@ -51,6 +52,12 @@ abstract class ViewModelModule {
     @IntoMap
     @ViewModelKey( AnnouncementViewModel::class )
     abstract fun bindAnnouncementViewModel( announcementViewModel: AnnouncementViewModel) : ViewModel
+
+
+    @Binds
+    @IntoMap
+    @ViewModelKey( MyAnnouncementViewModel::class )
+    abstract fun bindMyAnnouncementViewModel( vm: MyAnnouncementViewModel) : ViewModel
 
 
 }

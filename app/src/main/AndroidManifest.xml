@@ -17,20 +17,22 @@
         <activity
             android:name=".presentation.features.splash.ui.SplashActivity"
             android:exported="true">
-        </activity>
-        <activity android:name=".presentation.features.onboarding.ui.OnboardingActivity" />
-        <activity android:name=".presentation.features.signIn.ui.SignInActivity" />
-        <activity android:name=".presentation.features.signUp.ui.SignUpActivity" />
-        <activity android:name=".presentation.features.codeOtp.ui.CodeOtpActivity" />
 
-        <activity android:name=".presentation.features.home.ui.HomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity android:name=".presentation.features.onboarding.ui.OnboardingActivity" />
+        <activity android:name=".presentation.features.signIn.ui.SignInActivity" />
+        <activity android:name=".presentation.features.signUp.ui.SignUpActivity" />
+        <activity android:name=".presentation.features.codeOtp.ui.CodeOtpActivity" />
+
+        <activity android:name=".presentation.features.home.ui.HomeActivity" />
         <activity android:name=".presentation.features.announcement.ui.AnnouncementActivity" />
+        <activity android:name=".presentation.features.myAnnouncements.MyAnnouncementsActivity" />
     </application>
 
 </manifest>

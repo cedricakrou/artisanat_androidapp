@@ -37,11 +37,18 @@ class HomeActivity : BaseActivity<
         val mOnNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
             when (item.itemId) {
                 R.id.nav_home -> {
+                    val intent = Intent( this, HomeActivity::class.java )
+                    startActivity( intent )
+                    finish()
+                    return@OnNavigationItemSelectedListener true
+                }
+                R.id.nav_announcements -> {
                     val intent = Intent( this, AnnouncementActivity::class.java )
                     startActivity( intent )
                     finish()
                     return@OnNavigationItemSelectedListener true
                 }
+
             }
             false
         }

@@ -4,6 +4,7 @@ import com.cedricakrou.artisanat.data.common.ApiResponse
 import com.cedricakrou.artisanat.data.common.Result
 import com.cedricakrou.artisanat.data.managers.contrats.AnnouncementManager
 import com.cedricakrou.artisanat.presentation.common.BaseViewModel
+import com.cedricakrou.artisanat.presentation.features.StoreData
 import kotlinx.coroutines.flow.collect
 import javax.inject.Inject
 
@@ -32,7 +33,7 @@ class HomeViewModel @Inject constructor(
                 is HomeAction.INIT -> {
 
                     announcementManager.listAnnouncements(
-                        username = "kakou"
+                        username = StoreData.clientConnected.username
                     ).collect {
 
                         mState.postValue(

@@ -3,10 +3,12 @@ package com.cedricakrou.artisanat.infrastructure.remote
 import com.cedricakrou.artisanat.data.common.ApiResponse
 import com.cedricakrou.artisanat.domain.entities.Announcement
 import com.cedricakrou.artisanat.domain.entities.Client
+import com.cedricakrou.artisanat.domain.entities.Speciality
 import retrofit2.http.Field
 import retrofit2.http.FormUrlEncoded
 import retrofit2.http.POST
 import retrofit2.Response
+import retrofit2.http.GET
 
 interface ApiService {
 
@@ -43,5 +45,28 @@ interface ApiService {
     suspend fun listAnnouncements(
         @Field( value = "username" ) username : String
     ) : Response<ApiResponse<List<Announcement>>>
+
+    @FormUrlEncoded
+    @POST( value = Config.myAnnouncements)
+    suspend fun myAnnouncements(
+        @Field( value = "username" ) username : String
+    ) : Response<ApiResponse<List<Announcement>>>
+
+    @FormUrlEncoded
+    @POST( value = Config.save)
+    suspend fun saveAnnouncements(
+        @Field( value = "title" ) title : String,
+        @Field( value = "description" ) description : String,
+        @Field(value = "client") client : String,
+        @Field(value = "price") price : Double,
+        @Field(value = "speciality") speciality: String,
+    ) : Response<ApiResponse<List<Nothing>>>
+
+
+    @FormUrlEncoded
+    @GET( value = Config.specialities)
+    suspend fun getspecialities(
+    ) : Response<ApiResponse<List<Speciality>>>
+
 
 }

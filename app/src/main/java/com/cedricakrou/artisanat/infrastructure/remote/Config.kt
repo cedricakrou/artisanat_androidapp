@@ -12,6 +12,7 @@ object Config {
     const val announcements = "announcement/"
 
     const val save = "${announcements}save"
+    const val specialities = "${announcements}specialities"
     const val listAnnouncements = "${ announcements}list-announcements"
     const val myAnnouncements = "${ announcements }my-announcements"
 }

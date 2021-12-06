@@ -6,7 +6,7 @@ import com.cedricakrou.artisanat.R
 import com.cedricakrou.artisanat.presentation.Utils
 import com.cedricakrou.artisanat.presentation.common.BaseActivity
 import com.cedricakrou.artisanat.presentation.common.getMessage
-import com.cedricakrou.artisanat.presentation.features.codeOtp.ui.CodeOtpActivity
+import com.cedricakrou.artisanat.presentation.features.StoreData
 import com.cedricakrou.artisanat.presentation.features.home.ui.HomeActivity
 import com.cedricakrou.artisanat.presentation.features.signIn.SignInAction
 import com.cedricakrou.artisanat.presentation.features.signIn.SignInIntent
@@ -75,6 +75,8 @@ class SignInActivity : BaseActivity<
                     Toast.makeText( this, response.message, Toast.LENGTH_LONG ).show()
                 }
                 else {
+
+                    StoreData.clientConnected = response.data!!
 
                     val intent = Intent( this, HomeActivity::class.java )
                     startActivity( intent )
