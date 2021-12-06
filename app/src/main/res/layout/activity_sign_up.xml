@@ -16,8 +16,8 @@
         android:layout_marginTop="40dp"
         android:theme="@style/header"/>
 
-
     <LinearLayout
+        android:id="@+id/ll_body"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
@@ -96,7 +96,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Téléphone"
-                    android:inputType="textPassword" />
+                    android:inputType="text" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -172,6 +172,25 @@
 
     </LinearLayout>
 
+
+    <com.agrawalsuneet.dotsloader.loaders.LinearDotsLoader
+        android:id="@+id/loading_bar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        app:loader_animDur="500"
+        app:loader_noOfDots="3"
+        app:loader_circleRadius="25dp"
+        app:loader_defaultColor="@color/colorAccent"
+        app:loader_selectedColor="@color/colorPrimaryDark"
+        app:loader_dotsDist="15dp"
+        app:loader_expandOnSelect="false"
+        app:loader_isSingleDir="false"
+        app:loader_selectedRadius="10dp"
+        app:loader_showRunningShadow="true"
+        app:loader_firstShadowColor="@color/tab_indicator_gray"
+        app:loader_secondShadowColor="@color/colorAccent"
+        android:layout_centerInParent="true" />
 
 
 </RelativeLayout>

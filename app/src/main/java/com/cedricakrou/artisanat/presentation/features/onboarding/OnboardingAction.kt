@@ -4,5 +4,5 @@ import com.cedricakrou.artisanat.presentation.common.IViewAction
 
 
 sealed class OnboardingAction : IViewAction {
-    object InitData : OnboardingAction()
+    object FirstConnection : OnboardingAction()
 }

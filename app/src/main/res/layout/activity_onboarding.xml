@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".presentation.features.home.ui.HomeActivity">
+    tools:context=".presentation.features.onboarding.ui.OnboardingActivity">
 
 
     <androidx.viewpager.widget.ViewPager
@@ -35,7 +35,7 @@
     </com.google.android.material.tabs.TabLayout>
 
     <Button
-        android:id="@+id/btn_scan"
+        android:id="@+id/btn_start"
         android:visibility="visible"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

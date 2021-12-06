@@ -32,7 +32,7 @@
                 android:id="@+id/edt_username"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="textEmailAddress"
+                android:inputType="text"
                 android:hint="username"
                 style="@style/formDesign" />
 
@@ -64,6 +64,16 @@
             android:textStyle="bold"
             android:layout_gravity="center_horizontal"
             android:background="@drawable/style_bouton_pink" />
+
+        <TextView
+            android:id="@+id/tv_sign_up"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:text="Voulez vous créer un compte ?"
+            android:textColor="@android:color/black"
+            android:textStyle="bold"
+            android:layout_gravity="center_horizontal" />
 
     </LinearLayout>
 

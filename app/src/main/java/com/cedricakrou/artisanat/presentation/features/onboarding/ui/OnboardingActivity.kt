@@ -8,6 +8,7 @@ import com.cedricakrou.artisanat.presentation.features.onboarding.OnBoardingView
 import com.cedricakrou.artisanat.presentation.features.onboarding.OnboardingAction
 import com.cedricakrou.artisanat.presentation.features.onboarding.OnboardingIntent
 import com.cedricakrou.artisanat.presentation.features.onboarding.OnboardingState
+import com.cedricakrou.artisanat.presentation.features.signIn.ui.SignInActivity
 import com.google.android.material.tabs.TabLayout
 import kotlinx.android.synthetic.main.activity_onboarding.*
 import java.util.ArrayList
@@ -32,24 +33,24 @@ class OnboardingActivity : BaseActivity<
 
         mList.add(
             ScreenItem(
-                "Bienvenue à Neo verify Identity",
-                "Neo Verify Identity permet de verifier l'identité d'un client de Willis Tower Watson",
+                "Bienvenue à ARTSIAN'",
+                "Nous vous mettons en relatio,n avec les meilleurs prestataires de services.",
                 R.drawable.onboarding_img1
             )
         )
 
         mList.add(
             ScreenItem(
-                "Accès à la camera",
-                "Veuillez accorder la permission d'accès à la caméra et vous pourrez scanner le Qr du client.",
+                "SERVICES",
+                "Soumettez vos offres et nous vous proposons avec l'artisan ayant le meilleur profil",
                 R.drawable.onboarding_img2
             )
         )
 
         mList.add(
             ScreenItem(
-                "Scan Qr Code",
-                "Placez le code qr face au téléphone et évitez de le secouer afin d'obtenir les résultats rapidement",
+                "AVENTURE",
+                "Embarquez avec nous dans cette aventure merveilleuse.",
                 R.drawable.onboarding_img3
             )
         )
@@ -75,16 +76,15 @@ class OnboardingActivity : BaseActivity<
 
     override fun initDATA() {
 
-        dispatchIntent(OnboardingIntent.Init)
+
 
     }
 
     override fun initEVENT() {
-         btn_scan.setOnClickListener {
 
-//             val intent = Intent( this, SignInActivity::class.java )
+         btn_start.setOnClickListener {
 
-//             startActivity( intent )
+             dispatchIntent(OnboardingIntent.FirstConnection)
 
         }
     }
@@ -92,7 +92,13 @@ class OnboardingActivity : BaseActivity<
     override fun render(state: OnboardingState) {
 
         when( state ) {
-            is OnboardingState.InitData -> Toast.makeText( this, "Ok", Toast.LENGTH_SHORT ).show()
+            is OnboardingState.FirstConnection -> {
+
+                val intent = Intent( this, SignInActivity::class.java )
+
+                startActivity( intent )
+
+            }
         }
 
     }
