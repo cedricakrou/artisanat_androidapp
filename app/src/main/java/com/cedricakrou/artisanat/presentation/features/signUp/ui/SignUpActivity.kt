@@ -8,6 +8,7 @@ import com.cedricakrou.artisanat.presentation.common.BaseActivity
 import com.cedricakrou.artisanat.presentation.common.getMessage
 import com.cedricakrou.artisanat.presentation.features.codeOtp.ui.CodeOtpActivity
 import com.cedricakrou.artisanat.presentation.features.signIn.SignInIntent
+import com.cedricakrou.artisanat.presentation.features.signIn.ui.SignInActivity
 import com.cedricakrou.artisanat.presentation.features.signUp.SignUpAction
 import com.cedricakrou.artisanat.presentation.features.signUp.SignUpIntent
 import com.cedricakrou.artisanat.presentation.features.signUp.SignUpState
@@ -47,6 +48,17 @@ class SignUpActivity : BaseActivity<SignUpIntent,
         }
 
 
+        tv_sign_in.setOnClickListener {
+
+            val intent = Intent( this, SignInActivity::class.java )
+
+            startActivity( intent )
+
+            finish()
+
+        }
+
+
     }
 
     override fun render(state: SignUpState) {
@@ -61,6 +73,8 @@ class SignUpActivity : BaseActivity<SignUpIntent,
             }
 
             is SignUpState.Error -> {
+                ll_body.visibility = View.VISIBLE
+                loading_bar.visibility = View.GONE
                 Toast.makeText( this, "Erreur " + state.exception.getMessage(this)  , Toast.LENGTH_LONG ).show()
             }
 

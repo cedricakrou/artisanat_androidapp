@@ -31,7 +31,7 @@ interface ApiService {
     ) : Response<ApiResponse<Nothing>>
 
     @FormUrlEncoded
-    @POST( value = Config.signIn)
+    @POST( value = Config.verifyOtp)
     suspend fun validateOtpCode(
         @Field( value = "username" ) username : String,
         @Field( value = "code" ) code : String

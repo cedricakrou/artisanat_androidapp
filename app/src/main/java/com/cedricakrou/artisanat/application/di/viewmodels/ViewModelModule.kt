@@ -4,6 +4,7 @@ import androidx.lifecycle.ViewModel
 import com.cedricakrou.artisanat.application.di.annotations.ViewModelKey
 import com.cedricakrou.artisanat.presentation.features.announcement.AnnouncementViewModel
 import com.cedricakrou.artisanat.presentation.features.codeOtp.CodeOtpViewModel
+import com.cedricakrou.artisanat.presentation.features.home.ui.HomeViewModel
 import com.cedricakrou.artisanat.presentation.features.onboarding.OnBoardingViewModel
 import com.cedricakrou.artisanat.presentation.features.signIn.SignInViewModel
 import com.cedricakrou.artisanat.presentation.features.signUp.SignUpViewModel
@@ -40,6 +41,11 @@ abstract class ViewModelModule {
     @IntoMap
     @ViewModelKey( CodeOtpViewModel::class )
     abstract fun bindCodeOtpViewModel( vm : CodeOtpViewModel ) : ViewModel
+
+    @Binds
+    @IntoMap
+    @ViewModelKey( HomeViewModel::class )
+    abstract fun bindHomeViewModel( vm : HomeViewModel ) : ViewModel
 
     @Binds
     @IntoMap

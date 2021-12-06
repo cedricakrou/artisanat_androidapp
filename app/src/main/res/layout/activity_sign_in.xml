@@ -18,6 +18,7 @@
 
 
     <LinearLayout
+        android:id="@+id/ll_body"
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -66,17 +67,21 @@
             android:background="@drawable/style_bouton_pink" />
 
         <TextView
-            android:id="@+id/tv_sign_up"
+            android:id="@+id/tv_sign_in"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="50dp"
             android:text="Voulez vous créer un compte ?"
             android:textColor="@android:color/black"
             android:textStyle="bold"
+            android:textSize="20sp"
+            android:autoLink="web"
             android:layout_gravity="center_horizontal" />
 
     </LinearLayout>
 
+
+    <include layout="@layout/layout_loading" />
 
 
 </RelativeLayout>

@@ -13,7 +13,6 @@ import com.cedricakrou.artisanat.presentation.features.codeOtp.CodeOtpViewModel
 import com.cedricakrou.artisanat.presentation.features.signIn.ui.SignInActivity
 import kotlinx.android.synthetic.main.activity_code_otp.*
 import kotlinx.android.synthetic.main.activity_code_otp.btn_submit
-import kotlinx.android.synthetic.main.activity_sign_up.*
 
 
 class CodeOtpActivity : BaseActivity<

@@ -170,6 +170,19 @@
             android:textColor="@android:color/white"
             android:textStyle="bold" />
 
+
+        <TextView
+            android:id="@+id/tv_sign_in"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:text="Avez vous déjà un compte ?"
+            android:textColor="@android:color/black"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:autoLink="web"
+            android:layout_gravity="center_horizontal" />
+
     </LinearLayout>
 
 

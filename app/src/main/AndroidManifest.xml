@@ -27,6 +27,7 @@
         <activity android:name=".presentation.features.signIn.ui.SignInActivity" />
         <activity android:name=".presentation.features.signUp.ui.SignUpActivity" />
         <activity android:name=".presentation.features.codeOtp.ui.CodeOtpActivity" />
+        <activity android:name=".presentation.features.home.ui.HomeActivity" />
     </application>
 
 </manifest>

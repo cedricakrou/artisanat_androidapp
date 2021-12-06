@@ -114,7 +114,7 @@ class UserManagerImpl(val apiService: ApiService) : UserManager {
                         ApiResponse(
                             error = this.body()!!.error,
                             message = this.body()!!.message,
-                            data = this.body()!!.data
+                            data = null
                         )
                     )
                     )
